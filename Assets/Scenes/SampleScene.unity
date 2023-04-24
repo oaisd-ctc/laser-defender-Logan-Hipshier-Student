@@ -224,6 +224,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9561716b411ab244ca394d5d650d14d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paddingLeft: 0.5
+  paddingRight: 0.5
+  paddingTop: 5
+  paddingBottom: 2
   moveSpeed: 5
 --- !u!1 &905219491
 GameObject:
@@ -439,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1917581618870478290, guid: e087bf7cb23c4be47a8e1c6e3068cb81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.029852567
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1917581618870478290, guid: e087bf7cb23c4be47a8e1c6e3068cb81, type: 3}
       propertyPath: m_LocalPosition.z
