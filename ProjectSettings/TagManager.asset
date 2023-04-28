@@ -14,8 +14,8 @@ TagManager:
   - Background
   - Player
   - Enemy
-  - 
-  - 
+  - PlayerLaser
+  - EnemyLaser
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1332185565
+    locked: 0
+  - name: Laser
+    uniqueID: 381444809
     locked: 0
   - name: Enemy
     uniqueID: 608546311
