@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
     void InitBounds()
     {
         Camera mainCamera = Camera.main;
-        minBounds= mainCamera.ViewportToWorldPoint(new Vector2(0,0));
-        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1,1));
+        minBounds= mainCamera.ViewportToWorldPoint(new Vector2(0,-.38f));
+        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1,.6f));
     }
 
     void Move()
