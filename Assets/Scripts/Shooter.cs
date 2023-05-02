@@ -10,8 +10,12 @@ public class Shooter : MonoBehaviour
     [SerializeField] float firingRate = 0.2f;
     [SerializeField] bool useAI;
 
+    AudioPlayer audioPlayer;
     public bool isFiring;
     Coroutine firingCoroutine;
+    void Awake(){
+        audioPlayer= FindObjectOfType<AudioPlayer>();
+    }
     void Start()
     {
         if(useAI){
@@ -49,6 +53,7 @@ public class Shooter : MonoBehaviour
                 rb.velocity= new Vector2(0, -projectileSpeed);
             }
             Destroy(instance,projectileLifetime);
+            audioPlayer.PlayShootingClip();
             yield return new WaitForSeconds(firingRate);
         }
          

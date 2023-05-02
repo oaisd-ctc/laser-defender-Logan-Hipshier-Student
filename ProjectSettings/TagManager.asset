@@ -41,8 +41,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Background_0
     uniqueID: 1332185565
+    locked: 0
+  - name: BackGround_1
+    uniqueID: 382610179
     locked: 0
   - name: Laser
     uniqueID: 381444809
