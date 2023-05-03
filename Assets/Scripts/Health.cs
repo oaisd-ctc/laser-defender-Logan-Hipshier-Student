@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] bool isPlayer;
+    [SerializeField] int score=50;
     [SerializeField] int health = 50;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] bool applyCameraShake;
     CameraShake cameraShake;
     AudioPlayer audioPlayer;
+    ScoreKeeper scoreKeeper;
 
     void Awake(){
         cameraShake=Camera.main.GetComponent<CameraShake>();
         audioPlayer= FindObjectOfType<AudioPlayer>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
 
     }
 
@@ -27,10 +31,16 @@ public class Health : MonoBehaviour
 
         }
     }
+    public int GetHealth(){
+        return health;
+    }
     void TakeDamage(int damage){
         health-= damage;
         if(health<=0){
             audioPlayer.PlayExplosionClip();
+            if(!isPlayer){
+                scoreKeeper.ModifyScore(score);
+            }
             Destroy(gameObject);
         }
     }
