@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
+ static int FinalScore;
 int score;
 void Start(){
     ResetScore();
@@ -17,6 +18,9 @@ public void ModifyScore(int value){
 }
 public void ResetScore(){
     score = 0;
+}
+public void SetFinalScore(int value){
+    FinalScore = value;
 }
 
 }
