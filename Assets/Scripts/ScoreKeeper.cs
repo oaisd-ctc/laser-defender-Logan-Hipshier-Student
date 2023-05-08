@@ -1,14 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour
 {
- static int FinalScore;
+
 int score;
+    static ScoreKeeper instance;
+    void Awake(){
+        ManageSingleton();
+    }
+    void ManageSingleton(){
+        if(instance!= null){
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else{
+            instance=this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 void Start(){
     ResetScore();
+    
 }
+
+
 public int GetScore(){
     return score;
 }
@@ -19,8 +40,8 @@ public void ModifyScore(int value){
 public void ResetScore(){
     score = 0;
 }
-public void SetFinalScore(int value){
-    FinalScore = value;
-}
+
+
+
 
 }
